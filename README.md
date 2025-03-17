@@ -25,7 +25,8 @@ A simple script that will check for you if there are available appointments to y
 
    ![image](https://github.com/user-attachments/assets/62f2838e-9a42-4c62-92eb-f0d1a3b32c3e)
 
-10. Now where ever you want on your PC create a new TXT file (you can use notepad for this)
+10. Now you have 2 choices: 1. Make your own file , 2. Download the "finished" poiliti_time.txt file from the repo - If you choose #2 you only need to input the link and save it to BAT
+    If you decided to make your own file - create the file where ever you want on your PC create a new TXT file (you can use notepad for this).
 11. Inside this file you paste this script (note that I have made a line for you to paste the URL inside, remove the exclamation marks):
 
    ```batch
