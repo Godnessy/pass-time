@@ -1,0 +1,56 @@
+@echo off
+setlocal EnableDelayedExpansion
+:: Set API URL
+set API_URL=<ADD_URL_HERE>
+
+echo Checking API endpoint...
+echo URL: %API_URL%
+echo.
+echo Please wait while processing...
+:: Make the API request and save the full response
+echo Sending request...
+curl -s -f "%API_URL%" > response_temp.txt 2>error_temp.txt
+set CURL_ERROR=%ERRORLEVEL%
+set /p RESPONSE=<response_temp.txt
+echo Request completed.
+echo.
+echo Analyzing response...
+
+if %CURL_ERROR% NEQ 0 (
+    echo RESULT: URL ERROR DETECTED!
+    echo.
+    echo *** WARNING: INVALID URL OR SERVER ERROR! ***
+    echo.
+    echo Error details: The link you pasted in is wrong or the Politi server isn't working, go back to the guide and re do the link copying steps.
+    echo --------------------
+    type error_temp.txt
+    echo --------------------
+) else if "!RESPONSE!"=="[]" (
+    echo RESULT: API returned an empty array
+    echo Details: There are no available dates right now, try again tomorrow!
+) else (
+    echo RESULT: API returned data!
+    echo.
+    echo *** WARNING: NON-EMPTY RESPONSE DETECTED! - There are available appointments -  GO TO POLITI WEBSITE TO BOOK AN APPOINTMENT ***
+    echo.
+    echo Response content:
+    echo --------------------
+    type response_temp.txt
+    echo -------------------
+
+    echo.
+    echo.
+    echo There are available appointments -  GO TO POLITI WEBSITE TO BOOK AN APPOINTMENT
+
+    echo Copy this address and paste it in your browser: https://www.politiet.no/tjenester/pass-og-id-kort/bestille-endre-eller-avbestille-time-til-pass-og-id-kort/
+)
+
+echo.
+:: Clean up temporary files
+del response_temp.txt
+if exist error_temp.txt del error_temp.txt
+:: Keep the window open
+echo ======================================
+echo Process finished. Press any key to exit...
+pause > nul
+endlocal
