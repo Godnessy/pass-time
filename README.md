@@ -14,6 +14,8 @@ A simple script that will check for you if there are available appointments to y
 4. Right click on the page and click Inspect (In chrome and firefox)
 5. Navigate to the Network tab of the developer tools console (The new window that opened)
 6. To make it easy click on the little circle with a diagonal line going through it on the right side of the console (next to the red stop button), this will clear the current network logs making it easier to find the next one.
+![image](https://github.com/user-attachments/assets/6cb9df95-09ae-4349-a2ea-78c2f0141eec)
+
 7. Now click next to go to the Velg Tidspunk stage, it might say there are no available appointments, that's ok
 8. In the Network window you will now see 1 or more lines appear, pick the one first one and go to the Headers tab in the right side window (still inside the network tab in the developer console)
 9. Select the value next to the Request URL header, copy the whole link that should look like this:
