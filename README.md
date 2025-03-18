@@ -3,7 +3,7 @@
 ## About
 A simple script that will check for you if there are available appointments to your local Norwegian police station - This is mainly for developers but anyone with a bit of knowhow and some will to try should be able to use this.
 
-> **Note:** This script should help you find appointments to any service offered by the police website that uses the qmaticwebbooking API.
+> **Note:** This script was developed to find passport appointments but it should help you find appointments to any service offered by the police website that uses the qmaticwebbooking API.
 
 ## How to use (Windows)
 *Note that I am over explaining to make this possible for none technical people to use it as well, for developers you should be able to skip a lot of this:*
